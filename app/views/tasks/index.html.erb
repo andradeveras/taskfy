@@ -4,8 +4,20 @@
       <%= notice %>
     </p>
   <% end %>
-  <h1 class="font-bold text-2xl mb-4 self-start">Task Manager</h1>
-  <div class="flex items-center space-x-2">
-    <%= render "form", task: @task %> <!-- Aqui você chama o partial do formulário -->
+
+  <!-- Título e Formulário -->
+  <div class="w-full max-w-4xl px-4 mb-7">
+    <h1 class="font-bold text-2xl mb-4">Task Manager</h1>
+    <div class="flex items-center space-x-2">
+      <%= render "form", task: @task %> <!-- Aqui você chama o partial do formulário -->
+    </div>
+  </div>
+
+  <!-- Tarefas -->
+  <div id="tasks" class="w-full max-w-4xl px-4">
+    <h1 class="font-bold text-lg mb-7">Tasks</h1>
+    <div class="px-5">
+      <%= render @tasks %> <!-- Renderiza a lista de tarefas -->
+    </div>
   </div>
 </div>
