@@ -10,10 +10,4 @@
     .btn {
         @apply mt-3 rounded-lg py-1 px-5 inline-block font-medium cursor-pointer;
     }       
-    .btn-primary {
-        @apply bg-deepblue-500 text-white;
-    }
-    .text-center {
-        @apply text-center;
-    }
 }
