@@ -13,6 +13,21 @@ class TasksController < ApplicationController
     end
   end
 
+  def toggle
+    @task = Task.find(params[:id])
+    new_status = !@task.completed
+    @task.update(completed: new_status)
+  
+    respond_to do |format|
+      format.turbo_stream
+      format.html do
+        message = new_status ? "Task marked as completed." : "Task marked as incomplete."
+        redirect_to tasks_path, notice: message
+      end
+    end
+  end
+  
+
   private
 
   def task_params
